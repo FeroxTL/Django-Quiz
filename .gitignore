@@ -6,6 +6,12 @@ __pycache__/
 # C extensions
 *.so
 
+# ide
+.idea/
+
+# db
+*.sqlite3
+
 # Distribution / packaging
 .Python
 env/
@@ -86,6 +92,7 @@ celerybeat-schedule
 .venv
 venv/
 ENV/
+myenv/
 
 # Spyder project settings
 .spyderproject

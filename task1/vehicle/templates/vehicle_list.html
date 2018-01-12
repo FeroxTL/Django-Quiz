@@ -1,0 +1,24 @@
+{% extends 'layouts/body.html' %}
+
+{% block body %}
+  <table>
+    <thead>
+      <tr>
+        <th>Дата внесения</th>
+        <th>Модель</th>
+        <th>Категория</th>
+      </tr>
+    </thead>
+    {% for vehicle in vehicle_list %}
+      <tr>
+        <td>{{ vehicle.date_create }}</td>
+        <td>{{ vehicle.name }}</td>
+        <td>{{ vehicle.get_category_display }}</td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="3">Нет ТС для отображения</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
