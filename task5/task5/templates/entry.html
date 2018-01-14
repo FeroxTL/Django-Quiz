@@ -1,0 +1,13 @@
+<ul>
+  {% for entry in entry_list %}
+    <li>{{ entry.id }}</li>
+  {% endfor %}
+</ul>
+
+<p>
+{% if success %}
+  Успешно создано
+{% else %}
+  Создание не удалось
+{% endif %}
+</p>
