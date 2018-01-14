@@ -1,0 +1,10 @@
+{% extends 'layouts/body.html' %}
+
+{% block body %}
+  <form method="POST" action="{% url 'procedure-execution-create' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Отправить">
+  </form>
+
+{% endblock %}

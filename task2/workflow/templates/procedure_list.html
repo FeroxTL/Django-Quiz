@@ -1,0 +1,29 @@
+{% extends 'layouts/body.html' %}
+
+{% block body %}
+  <table>
+    <thead>
+      <tr>
+        <th>Дата выполнения</th>
+        <th>Процедура</th>
+      </tr>
+    </thead>
+    {% for procedure_execution in procedure_execution_list %}
+      <tr>
+        <td>{{ procedure_execution.date_create }}</td>
+        <td>{{ procedure_execution.procedure.name }}</td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="2">Нет выполненных процедур</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  <form method="POST" action="{% url 'procedure-execution-create' %}">
+    {% csrf_token %}
+    {{ procedure_execution_form.as_p }}
+    <input type="submit" value="Отправить">
+  </form>
+
+{% endblock %}
